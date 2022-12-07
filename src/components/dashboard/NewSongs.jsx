@@ -180,7 +180,7 @@ const NewSongs = () => {
     }
   };
   const saveSong = () => {
-    if (!songImageCover || !audioImageCover) {
+    if (!songImageCover || !audioImageCover || !songName) {
       console.log("file missing");
     } else {
       setIsAudioLoading(true);
