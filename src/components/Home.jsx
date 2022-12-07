@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useStateValue } from "../context/stateProvider";
 import { motion } from "framer-motion";
 
 import Header from "./Header";
 import { actionType } from "../context/reducer";
+import axios from "axios";
 
 const Home = () => {
   const [
@@ -19,6 +20,23 @@ const Home = () => {
     },
     dispatch,
   ] = useStateValue();
+  const getAllSongs = async () => {
+    try {
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/songs/getall`
+      );
+      console.log(res.data);
+      dispatch({
+        type: actionType.SET_ALL_SONGS,
+        allSongs: res.data.data,
+      });
+    } catch (error) {
+      return null;
+    }
+  };
+  useEffect(() => {
+    getAllSongs();
+  }, []);
   return (
     <div className="h-auto flex items-center justify-center min-w-[680px]">
       <div className="w-full  flex-col bg-orange-100">

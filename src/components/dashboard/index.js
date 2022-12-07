@@ -1,5 +1,5 @@
 export { default as Dashboard } from "./Dashboard";
-export { default as Home } from "./Home";
+
 export { default as Album } from "./Album";
 export { default as Artist } from "./Artist";
 export { default as Songs } from "./Songs";

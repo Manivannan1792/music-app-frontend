@@ -20,7 +20,7 @@ const Dashboard = () => {
         <Header />
         <div className="w-[60%] my-2 p-4 flex items-center justify-evenly">
           {/* prettier-ignore */}
-          <NavLink to={"/dashboard/home"}  className={({ isActive }) => isActive ? isActiveStyles : isNotActiveStyles }><IoHome className="text-2xl text-textColor" /></NavLink>
+          <NavLink to={"/dashboard/homes"}  className={({ isActive }) => isActive ? isActiveStyles : isNotActiveStyles }><IoHome className="text-2xl text-textColor" /></NavLink>
           {/* prettier-ignore */}
           <NavLink to={"/dashboard/user"} className={({ isActive }) => isActive ? isActiveStyles : isNotActiveStyles }> Users </NavLink>
 
@@ -35,7 +35,7 @@ const Dashboard = () => {
         </div>
         <div className="my-4 w-full p-4">
           <Routes>
-            <Route path="/home" element={<DashboardHome />} />
+            <Route path="/homes" element={<DashboardHome />} />
             <Route path="/user" element={<UserData />} />
             <Route path="/songs" element={<Songs />} />
             <Route path="/artist" element={<Artist />} />
