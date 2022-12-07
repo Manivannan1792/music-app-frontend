@@ -113,7 +113,7 @@ const MusicPlayer = () => {
             <AudioPlayer
               src={allSongs[songIndex]?.songUrl}
               onPlay={() => console.log("is playing")}
-              autoPlay={false}
+              autoPlay={true}
               showSkipControls={true}
               onClickNext={nextTrack}
               onClickPrevious={previousTrack}
