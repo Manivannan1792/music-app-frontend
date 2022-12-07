@@ -61,7 +61,7 @@ export default function Login() {
             ...values,
           }
         );
-        console.log(response);
+        // console.log(response);
 
         if (response.data) {
           localStorage.setItem("token", response.data);
@@ -95,7 +95,7 @@ export default function Login() {
     },
     onSubmit: async (values) => {
       try {
-        console.log(values);
+        // console.log(values);
         const response = await axios.post(
           "https://online-music-app.onrender.com/register/signin",
           {

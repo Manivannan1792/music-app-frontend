@@ -177,7 +177,7 @@ export const PlayListCard = () => {
       const res = await axios.get(
         `https://online-music-app.onrender.com/songs/getall`
       );
-      console.log(res.data);
+      // console.log(res.data);
       dispath({
         type: actionType.SET_ALL_SONGS,
         allSongs: res.data.data,

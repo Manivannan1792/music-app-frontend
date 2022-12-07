@@ -28,7 +28,7 @@ const Header = () => {
           },
         }
       );
-      console.log(res.data.existuser);
+      //console.log(res.data.existuser);
       // return res.data.existuser;
       dispatch({
         type: actionType.SET_USER,

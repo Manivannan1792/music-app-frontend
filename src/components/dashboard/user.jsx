@@ -85,11 +85,11 @@ export const UserCard = ({ data, index }) => {
   const UpdateUserRole = (userId, role) => {
     // console.log(userId, role);
     update(userId, role).then((res) => {
-      console.log(res);
+      // console.log(res);
 
       if (res) {
         getAllUsers().then((data) => {
-          console.log(data);
+          // console.log(data);
           dispatch({
             type: actionType.SET_ALL_USERS,
             allUsers: data.role,
@@ -109,7 +109,7 @@ export const UserCard = ({ data, index }) => {
     }
   };
   const deleteuser = (userId) => {
-    console.log(userId);
+    // console.log(userId);
     removeUser(userId).then((res) => {
       if (res) {
         getAllUsers().then((data) => {

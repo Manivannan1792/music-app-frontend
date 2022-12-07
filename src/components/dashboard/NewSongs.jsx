@@ -169,7 +169,7 @@ const NewSongs = () => {
           ...data,
         }
       );
-      console.log(res);
+      // console.log(res);
       dispatch({
         type: actionType.SET_ALL_SONGS,
         allSongs: res.data.data,
@@ -231,7 +231,7 @@ const NewSongs = () => {
           ...data,
         }
       );
-      console.log(res);
+      //console.log(res);
       dispatch({
         type: actionType.SET_ALL_ARTISTS,
         allArtists: res.data.data,
@@ -281,7 +281,7 @@ const NewSongs = () => {
           ...data,
         }
       );
-      console.log(res);
+      // console.log(res);
       dispatch({
         type: actionType.SET_ALL_ALBUMS,
         allAlbums: res.data.data,
@@ -603,20 +603,16 @@ export const FileUploader = ({
   const uploadFile = (e) => {
     isLoading(true);
     const uploadedFile = e.target.files[0];
-    console.log(uploadedFile);
-    console.log(storage);
+    // console.log(uploadedFile);
+    // console.log(storage);
     const storageRef = ref(
       storage,
       `${isImage ? "Image" : "Audio"}/${Date.now()}-${uploadedFile.name}`
     );
-    console.log(storageRef);
-    // const storageRef = ref(
-    //   storage,
-    //   `${isImage ? "images" : "audio"}${Date.now()}_${uploadedFile.name}`
-    // );
+    // console.log(storageRef);
 
     const uploadTask = uploadBytesResumable(storageRef, uploadedFile);
-    console.log(uploadTask);
+    // console.log(uploadTask);
     uploadTask.on(
       "state_changed",
       (snapshot) => {
