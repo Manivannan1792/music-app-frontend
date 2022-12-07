@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Dashboard from "./components/dashboard/Dashboard";
+import Home from "./components/Home";
+import Login from "./components/registration";
+import { AnimatePresence, motion } from "framer-motion";
+import MainPage from "./components/mainPage";
+import { useStateValue } from "./context/stateProvider";
+import MusicPlayer from "./components/musicplayer/MusicPlayer";
 
 function App() {
+  const [{ isSongPlaying }, dispath] = useStateValue();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AnimatePresence exitBeforeEnter>
+      <div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/dashboard/*" element={<Dashboard />} />
+          </Routes>
+        </BrowserRouter>
+        {/* <div className="h-auto flex items-center justify-center min-w-[680px]"> */}
+        {isSongPlaying && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className={`fixed  h-26  inset-x-0 bottom-0  bg-cardOverlay drop-shadow-2xl backdrop-blur-md flex  items-center `}
+          >
+            <MusicPlayer />
+          </motion.div>
+        )}
+        {/* </div> */}
+      </div>
+    </AnimatePresence>
   );
 }
 
