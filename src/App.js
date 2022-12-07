@@ -4,7 +4,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Home from "./components/Home";
 import Login from "./components/registration";
 import { AnimatePresence, motion } from "framer-motion";
-import MainPage from "./components/mainPage";
+
 import { useStateValue } from "./context/stateProvider";
 import MusicPlayer from "./components/musicplayer/MusicPlayer";
 
@@ -15,8 +15,7 @@ function App() {
       <div>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/dashboard/*" element={<Dashboard />} />
           </Routes>

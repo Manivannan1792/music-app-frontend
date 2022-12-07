@@ -70,7 +70,7 @@ export default function Login() {
             icon: "success",
             confirmButtonText: "okay",
           });
-          navigate("/login");
+          navigate("/");
         }
         if (response.status == 200) {
           alert(" Account Created sucessfully");
@@ -114,137 +114,134 @@ export default function Login() {
     },
   });
   return (
-    <>
-      <div className={`container ${signIn ? "sign-up-mode" : ""}`}>
-        <div className="forms-container">
-          <div className="signin-signup">
-            <form onSubmit={FormikSignin.handleSubmit} className="sign-in-form">
-              <h2 className="title">Sign in</h2>
-              <div className="input-field">
-                <i className="fa fa-envelope"></i>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={FormikSignin.values.email}
-                  onBlur={FormikSignin.handleBlur}
-                  onChange={FormikSignin.handleChange}
-                />
-              </div>
-              <div style={{ color: "red" }}>
-                {FormikSignin.touched.email && FormikSignin.errors.email}
-              </div>
-              <div className="input-field">
-                <i className="fa fa-lock"></i>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  value={FormikSignin.values.password}
-                  onChange={FormikSignin.handleChange}
-                  onBlur={FormikSignin.handleBlur}
-                />
-              </div>
-              <div style={{ color: "red" }}>
-                {FormikSignin.touched.password && FormikSignin.errors.password}
-              </div>
-              <input type="submit" value="login" className="btn solid" />
-            </form>
-            {/* sign up page */}
-            <form onSubmit={Formik.handleSubmit} className="sign-up-form">
-              <h2 className="title">Sign up</h2>
-              <div className="input-field">
-                <i className="fa fa-user"></i>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  name="name"
-                  value={Formik.values.name}
-                  onChange={Formik.handleChange}
-                  onBlur={Formik.handleBlur}
-                />
-              </div>
-              <div style={{ color: "red" }}>
-                {Formik.touched.name && Formik.errors.name}
-              </div>
-              <div className="input-field">
-                <i className="fa fa-envelope"></i>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={Formik.values.email}
-                  onBlur={Formik.handleBlur}
-                  onChange={Formik.handleChange}
-                />
-              </div>
-              <div style={{ color: "red" }}>
-                {Formik.touched.email && Formik.errors.email}
-              </div>
-              <div className="input-field">
-                <i className="fa fa-lock"></i>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  value={Formik.values.password}
-                  onChange={Formik.handleChange}
-                  onBlur={Formik.handleBlur}
-                />
-              </div>
-              <div style={{ color: "red" }}>
-                {Formik.touched.password && Formik.errors.password}
-              </div>
-              <div className="input-field">
-                <i className="fa fa-lock"></i>
-                <input
-                  type="password"
-                  name="confirmpassword"
-                  placeholder="Confirm Password"
-                  value={Formik.values.confirmpassword}
-                  onBlur={Formik.handleBlur}
-                  onChange={Formik.handleChange}
-                />
-              </div>
-              <div style={{ color: "red" }}>
-                {Formik.touched.confirmpassword &&
-                  Formik.errors.confirmpassword}
-              </div>
-              <input type="submit" value="sign up" className="btn solid" />
-            </form>
-          </div>
-        </div>
-        <div className="panel-container">
-          <div className="panel left-panel">
-            <div className="content">
-              <h3>New here ?</h3>
-              <p>loerm ispum dolor</p>
-              <button
-                className="btn transparent"
-                id="sign-up-btn"
-                onClick={SignUpHandleClick}
-              >
-                sign Up
-              </button>
+    <div className={`container ${signIn ? "sign-up-mode" : ""}`}>
+      <div className="forms-container">
+        <div className="signin-signup">
+          <form onSubmit={FormikSignin.handleSubmit} className="sign-in-form">
+            <h2 className="title">Sign in</h2>
+            <div className="input-field">
+              <i className="fa fa-envelope"></i>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={FormikSignin.values.email}
+                onBlur={FormikSignin.handleBlur}
+                onChange={FormikSignin.handleChange}
+              />
             </div>
-            <img src={one} className="image" alt=""></img>
-          </div>
-          <div className="panel right-panel">
-            <div className="content">
-              <h3>ONe of us ?</h3>
-              <p>loerm ispum dolor</p>
-              <button
-                className="btn transparent"
-                id="sign-in-btn"
-                onClick={SignInHandleClick}
-              >
-                Login
-              </button>
+            <div style={{ color: "red" }}>
+              {FormikSignin.touched.email && FormikSignin.errors.email}
             </div>
-            <img src={two} className="image" alt=""></img>
-          </div>
+            <div className="input-field">
+              <i className="fa fa-lock"></i>
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={FormikSignin.values.password}
+                onChange={FormikSignin.handleChange}
+                onBlur={FormikSignin.handleBlur}
+              />
+            </div>
+            <div style={{ color: "red" }}>
+              {FormikSignin.touched.password && FormikSignin.errors.password}
+            </div>
+            <input type="submit" value="login" className="btn solid" />
+          </form>
+          {/* sign up page */}
+          <form onSubmit={Formik.handleSubmit} className="sign-up-form">
+            <h2 className="title">Sign up</h2>
+            <div className="input-field">
+              <i className="fa fa-user"></i>
+              <input
+                type="text"
+                placeholder="Name"
+                name="name"
+                value={Formik.values.name}
+                onChange={Formik.handleChange}
+                onBlur={Formik.handleBlur}
+              />
+            </div>
+            <div style={{ color: "red" }}>
+              {Formik.touched.name && Formik.errors.name}
+            </div>
+            <div className="input-field">
+              <i className="fa fa-envelope"></i>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={Formik.values.email}
+                onBlur={Formik.handleBlur}
+                onChange={Formik.handleChange}
+              />
+            </div>
+            <div style={{ color: "red" }}>
+              {Formik.touched.email && Formik.errors.email}
+            </div>
+            <div className="input-field">
+              <i className="fa fa-lock"></i>
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={Formik.values.password}
+                onChange={Formik.handleChange}
+                onBlur={Formik.handleBlur}
+              />
+            </div>
+            <div style={{ color: "red" }}>
+              {Formik.touched.password && Formik.errors.password}
+            </div>
+            <div className="input-field">
+              <i className="fa fa-lock"></i>
+              <input
+                type="password"
+                name="confirmpassword"
+                placeholder="Confirm Password"
+                value={Formik.values.confirmpassword}
+                onBlur={Formik.handleBlur}
+                onChange={Formik.handleChange}
+              />
+            </div>
+            <div style={{ color: "red" }}>
+              {Formik.touched.confirmpassword && Formik.errors.confirmpassword}
+            </div>
+            <input type="submit" value="sign up" className="btn solid" />
+          </form>
         </div>
       </div>
-    </>
+      <div className="panel-container">
+        <div className="panel left-panel">
+          <div className="content">
+            <h3>New here ?</h3>
+            <p>loerm ispum dolor</p>
+            <button
+              className="btn transparent"
+              id="sign-up-btn"
+              onClick={SignUpHandleClick}
+            >
+              sign Up
+            </button>
+          </div>
+          <img src={one} className="image" alt=""></img>
+        </div>
+        <div className="panel right-panel">
+          <div className="content">
+            <h3>ONe of us ?</h3>
+            <p>loerm ispum dolor</p>
+            <button
+              className="btn transparent"
+              id="sign-in-btn"
+              onClick={SignInHandleClick}
+            >
+              Login
+            </button>
+          </div>
+          <img src={two} className="image" alt=""></img>
+        </div>
+      </div>
+    </div>
   );
 }
