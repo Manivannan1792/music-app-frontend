@@ -15,18 +15,8 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APPI_ID,
 };
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAUu3hmMx5UHg4unSk1b0jcfJNpA6QubZw",
-//   authDomain: "musicapp-2ca0e.firebaseapp.com",
-//   projectId: "musicapp-2ca0e",
-//   storageBucket: "musicapp-2ca0e.appspot.com",
-//   messagingSenderId: "549345208887",
-//   appId: "1:549345208887:web:162d0cc982818790252db2",
-// };
-console.log(firebaseConfig);
 // Initialize Firebase
 const app = getApps.length > 0 ? getApp() : initializeApp(firebaseConfig);
 const storage = getStorage(app);
-console.log(storage);
-console.log(app);
+
 export { app, storage };
