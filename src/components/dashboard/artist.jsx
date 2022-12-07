@@ -11,7 +11,9 @@ const Artist = () => {
   //
   const getAllArtists = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/artist/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/artist/getall`
+      );
       console.log(res.data);
       dispatch({
         type: actionType.SET_ALL_ARTISTS,

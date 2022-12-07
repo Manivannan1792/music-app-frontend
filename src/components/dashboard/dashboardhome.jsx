@@ -35,7 +35,9 @@ const DashboardHome = () => {
 
   const getAllUsers = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/register/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/register/getall`
+      );
       console.log(res.data);
       dispatch({
         type: actionType.SET_ALL_USERS,
@@ -47,7 +49,9 @@ const DashboardHome = () => {
   };
   const getAllArtist = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/artist/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/artist/getall`
+      );
       console.log(res.data);
       dispatch({
         type: actionType.SET_ALL_ARTISTS,
@@ -59,7 +63,9 @@ const DashboardHome = () => {
   };
   const getAllSongs = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/songs/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/songs/getall`
+      );
       console.log(res.data);
       dispatch({
         type: actionType.SET_ALL_SONGS,
@@ -71,7 +77,9 @@ const DashboardHome = () => {
   };
   const getAllAlbum = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/album/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/album/getall`
+      );
       console.log(res.data);
       dispatch({
         type: actionType.SET_ALL_ALBUMS,

@@ -13,7 +13,9 @@ const Artist = () => {
 
   const getAllAlbum = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/album/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/album/getall`
+      );
       console.log(res.data);
       dispatch({
         type: actionType.SET_ALL_ALBUMS,

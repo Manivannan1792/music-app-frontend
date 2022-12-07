@@ -20,12 +20,15 @@ const Header = () => {
   const [view, setView] = useState(false);
   const validateUser = async (data) => {
     try {
-      const res = await axios.get(`http://localhost:4000/register/login`, {
-        headers: {
-          token: Token,
-        },
-      });
-      //console.log(res.data.existuser);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/register/login`,
+        {
+          headers: {
+            token: Token,
+          },
+        }
+      );
+      console.log(res.data.existuser);
       // return res.data.existuser;
       dispatch({
         type: actionType.SET_USER,

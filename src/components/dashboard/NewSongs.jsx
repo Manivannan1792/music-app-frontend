@@ -62,7 +62,9 @@ const NewSongs = () => {
   ] = useStateValue();
   const getAllAlbum = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/album/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/album/getall`
+      );
       // console.log(res.data);
       dispatch({
         type: actionType.SET_ALL_ALBUMS,
@@ -74,7 +76,9 @@ const NewSongs = () => {
   };
   const getAllArtist = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/artist/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/artist/getall`
+      );
       //  console.log(res.data);
       dispatch({
         type: actionType.SET_ALL_ARTISTS,
@@ -87,7 +91,9 @@ const NewSongs = () => {
 
   const getAllSongs = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/songs/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/songs/getall`
+      );
       //  console.log(res.data);
       dispatch({
         type: actionType.SET_ALL_SONGS,
@@ -157,9 +163,12 @@ const NewSongs = () => {
   };
   const saveNewSong = async (data) => {
     try {
-      const res = await axios.post(`http://localhost:4000/songs/save`, {
-        ...data,
-      });
+      const res = await axios.post(
+        `https://online-music-app.onrender.com/songs/save`,
+        {
+          ...data,
+        }
+      );
       console.log(res);
       dispatch({
         type: actionType.SET_ALL_SONGS,
@@ -216,9 +225,12 @@ const NewSongs = () => {
   //////////////////////////////
   const saveNewArtist = async (data) => {
     try {
-      const res = await axios.post(`http://localhost:4000/artist/save`, {
-        ...data,
-      });
+      const res = await axios.post(
+        `https://online-music-app.onrender.com/artist/save`,
+        {
+          ...data,
+        }
+      );
       console.log(res);
       dispatch({
         type: actionType.SET_ALL_ARTISTS,
@@ -263,9 +275,12 @@ const NewSongs = () => {
 
   const saveNewAlbum = async (data) => {
     try {
-      const res = await axios.post(`http://localhost:4000/album/save`, {
-        ...data,
-      });
+      const res = await axios.post(
+        `https://online-music-app.onrender.com/album/save`,
+        {
+          ...data,
+        }
+      );
       console.log(res);
       dispatch({
         type: actionType.SET_ALL_ALBUMS,

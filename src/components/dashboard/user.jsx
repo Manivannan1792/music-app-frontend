@@ -50,7 +50,7 @@ export const UserCard = ({ data, index }) => {
   const update = async (userId, role) => {
     try {
       const res = await axios.put(
-        `http://localhost:4000/register/update/${userId}`,
+        `https://online-music-app.onrender.com/register/update/${userId}`,
         {
           data: { role: role },
         }
@@ -64,7 +64,9 @@ export const UserCard = ({ data, index }) => {
 
   const getAllUsers = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/register/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/register/getall`
+      );
       return res.data;
     } catch (error) {
       return null;
@@ -99,7 +101,7 @@ export const UserCard = ({ data, index }) => {
   const removeUser = async (userId) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/register/delete/${userId}`
+        `https://online-music-app.onrender.com/register/delete/${userId}`
       );
       return res;
     } catch (error) {

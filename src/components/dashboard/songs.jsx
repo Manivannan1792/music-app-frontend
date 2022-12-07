@@ -19,7 +19,9 @@ const Songs = () => {
 
   const getAllSongs = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/songs/getall`);
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/songs/getall`
+      );
       console.log(res.data);
       dispatch({
         type: actionType.SET_ALL_SONGS,
@@ -116,7 +118,7 @@ export const AlbumCard = ({ data, type, index }) => {
   const deleteSongById = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/songs/delete/${id}`
+        `https://online-music-app.onrender.com/songs/delete/${id}`
       );
       return res;
     } catch (error) {
@@ -126,7 +128,7 @@ export const AlbumCard = ({ data, type, index }) => {
   const deleteArtistById = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/artist/delete/${id}`
+        `https://online-music-app.onrender.com/artist/delete/${id}`
       );
       return res;
     } catch (error) {
@@ -136,7 +138,7 @@ export const AlbumCard = ({ data, type, index }) => {
   const deleteAlbumById = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/album/delete/${id}`
+        `https://online-music-app.onrender.com/album/delete/${id}`
       );
       return res;
     } catch (error) {

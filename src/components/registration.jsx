@@ -56,7 +56,7 @@ export default function Login() {
       try {
         // console.log(values);
         const response = await axios.post(
-          `http://localhost:4000/register/signup`,
+          `https://online-music-app.onrender.com/register/signup`,
           {
             ...values,
           }
@@ -97,7 +97,7 @@ export default function Login() {
       try {
         console.log(values);
         const response = await axios.post(
-          "http://localhost:4000/register/signin",
+          "https://online-music-app.onrender.com/register/signin",
           {
             ...values,
           }
