@@ -43,6 +43,7 @@ const Songs = () => {
             className="flex items-center px-4 py-3 border rounded-md border-gray-300 hover:border-gray-400 hover:shadow-md cursor-pointer"
           >
             <IoAdd />
+            <div>ADD FILES</div>
           </NavLink>
           <input
             type="text"
@@ -61,7 +62,6 @@ const Songs = () => {
             whileTap={{ scale: 0.75 }}
             onClick={() => {
               setSongFilter("");
-              //setFilteredSongs(null);
             }}
           >
             <AiOutlineClear className="text-3xl text-textColor cursor-pointer" />

@@ -322,6 +322,7 @@ const NewSongs = () => {
   return (
     <>
       <div className="flex items-center flex-col justify-center p-4 border border-gray-300 rounded-md">
+        <p className="text-xl font-semibold text-headingColor">Upload Song</p>
         <input
           type="text"
           placeholder="Type your song name"

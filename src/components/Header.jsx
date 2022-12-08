@@ -67,22 +67,20 @@ const Header = () => {
           </li>
           {/* <li className="mx-5 text-lg">
             <NavLink
-              to={"/login"}
               className={({ isActive }) =>
                 isActive ? isActiveStyle : isnotActiveStyle
               }
             >
-              music
+              Music
             </NavLink>
           </li>
           <li className="mx-5 text-lg">
             <NavLink
-              to={"/"}
               className={({ isActive }) =>
                 isActive ? isActiveStyle : isnotActiveStyle
               }
             >
-              playlist
+              Playlist
             </NavLink>
           </li> */}
         </ul>
@@ -117,7 +115,7 @@ const Header = () => {
                   <hr />
                 </>
               )}
-              <NavLink to={"/userProfile"}>
+              <NavLink>
                 <p className="text-base text-textColor hover:font-semibold duration-150 transition-all ease-in-out">
                   Profile
                 </p>

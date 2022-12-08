@@ -219,7 +219,7 @@ export const PlayListCard = () => {
                 music?._id === songIndex._id ? "bg-card" : "bg-transparent"
               }`}
               onClick={() => setCurrentPlaySong(index)}
-              key={songIndex._id}
+              key={index}
             >
               <IoMusicalNote className="text-textColor group-hover:text-headingColor text-2xl cursor-pointer" />
               <div className="flex items-start flex-col">
