@@ -65,7 +65,7 @@ const Header = () => {
               Home
             </NavLink>
           </li>
-          <li className="mx-5 text-lg">
+          {/* <li className="mx-5 text-lg">
             <NavLink
               to={"/login"}
               className={({ isActive }) =>
@@ -84,7 +84,7 @@ const Header = () => {
             >
               playlist
             </NavLink>
-          </li>
+          </li> */}
         </ul>
         <div
           onMouseEnter={() => setView(true)}
@@ -109,7 +109,7 @@ const Header = () => {
             >
               {user?.existuser.role === "admin" && (
                 <>
-                  <NavLink to={"/dashboard/home"}>
+                  <NavLink to={"/dashboard/homes"}>
                     <p className="text-base text-textColor hover:font-semibold duration-150 transition-all ease-in-out">
                       Dashboard
                     </p>

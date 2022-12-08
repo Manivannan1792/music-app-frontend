@@ -42,8 +42,8 @@ export const ArtistContainer = ({ data }) => {
   return (
     <div className=" w-full  flex flex-wrap gap-3  items-center justify-evenly">
       {data &&
-        data.map((song, i) => (
-          <AlbumCard key={song._id} data={song} index={i} type="artist" />
+        data.map((artist, id) => (
+          <AlbumCard key={artist._id} data={artist} index={id} type="artist" />
         ))}
     </div>
   );
