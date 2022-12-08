@@ -8,7 +8,6 @@ import { actionType } from "../../context/reducer";
 import { useStateValue } from "../../context/stateProvider";
 import { deleteObject, ref } from "firebase/storage";
 import { storage } from "../../config/firebase";
-//import { AlbumCard } from "./album";
 
 const Songs = () => {
   const [songFilter, setSongFilter] = useState("");
