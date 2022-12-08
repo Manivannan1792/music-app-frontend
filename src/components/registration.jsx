@@ -216,7 +216,10 @@ export default function Login() {
         <div className="panel left-panel">
           <div className="content">
             <h3>New here ?</h3>
-            <p>loerm ispum dolor</p>
+            <p>
+              Signup With us <br />
+              Enjoy unlimited music{" "}
+            </p>
             <button
               className="btn transparent"
               id="sign-up-btn"
@@ -224,13 +227,19 @@ export default function Login() {
             >
               sign Up
             </button>
+            <p>
+              Email:123@gmail.com <br />
+              password:123456789
+            </p>
           </div>
+
           <img src={one} className="image" alt=""></img>
         </div>
         <div className="panel right-panel">
           <div className="content">
-            <h3>ONe of us ?</h3>
-            <p>loerm ispum dolor</p>
+            <h3>One of us ?</h3>
+            <p>Just Login with your email and password</p>
+
             <button
               className="btn transparent"
               id="sign-in-btn"
@@ -238,6 +247,12 @@ export default function Login() {
             >
               Login
             </button>
+            <p></p>
+            <h5>Admin Credentials</h5>
+            <p>
+              Email:123@gmail.com <br />
+              password:123456789
+            </p>
           </div>
           <img src={two} className="image" alt=""></img>
         </div>
