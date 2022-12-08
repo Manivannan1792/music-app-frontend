@@ -108,8 +108,13 @@ export default function Login() {
           localStorage.setItem("token", response.data);
         }
       } catch (error) {
-        console.log(error);
-        window.alert("Please enter registered email ID and Password");
+        console.log(error.response.data.msg);
+        Swal.fire({
+          title: "Wrong credentials",
+          icon: "error",
+          confirmButtonText: "okay",
+        });
+        //  window.alert("Please enter registered email ID and Password");
       }
     },
   });

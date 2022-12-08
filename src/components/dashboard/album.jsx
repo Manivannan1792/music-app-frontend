@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { actionType } from "../../context/reducer";
 import { useStateValue } from "../../context/stateProvider";
-import { IoTrash } from "react-icons/io5";
-import { motion } from "framer-motion";
-import { storage } from "../../config/firebase";
-import { deleteObject, ref } from "firebase/storage";
+
 import { AlbumCard } from "./songs";
 
 const Artist = () => {

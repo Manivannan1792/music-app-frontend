@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { IoAdd, IoPause, IoPlay, IoTrash } from "react-icons/io5";
+import { IoAdd, IoTrash } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AiOutlineClear } from "react-icons/ai";

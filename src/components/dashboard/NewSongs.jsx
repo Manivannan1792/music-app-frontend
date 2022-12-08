@@ -181,7 +181,12 @@ const NewSongs = () => {
   };
   const saveSong = () => {
     if (!songImageCover || !audioImageCover || !songName) {
-      console.log("file missing");
+      // console.log("file missing");
+      Swal.fire({
+        title: "Fill All Feild",
+        icon: "error",
+        confirmButtonText: "okay",
+      });
     } else {
       setIsAudioLoading(true);
       setIsImageLoading(true);
@@ -243,7 +248,12 @@ const NewSongs = () => {
 
   const saveArtist = () => {
     if (!artistImageCover || !twitter || !instagram || !artistName) {
-      console.log("fill all");
+      // console.log("fill all");
+      Swal.fire({
+        title: "Fill All Feilds",
+        icon: "error",
+        confirmButtonText: "okay",
+      });
     } else {
       setIsArtistLoading(true);
       const data = {
@@ -293,7 +303,12 @@ const NewSongs = () => {
 
   const saveAlbum = () => {
     if (!albumImageCover || !albumName) {
-      console.log("fill all");
+      //console.log("fill all");
+      Swal.fire({
+        title: "Fill All Feild",
+        icon: "error",
+        confirmButtonText: "okay",
+      });
     } else {
       setIsAlbumLoading(true);
       const data = {
