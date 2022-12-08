@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./index.css";
+import "./registration.css";
 import one from "../assets/one.svg";
 import two from "../assets/two.svg";
 import { useFormik } from "formik";
