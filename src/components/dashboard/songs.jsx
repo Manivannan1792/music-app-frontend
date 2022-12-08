@@ -204,7 +204,7 @@ export const AlbumCard = ({ data, type, index }) => {
           <div className="flex items-center gap-3">
             <button
               className="text-sm px-4 py-1 rounded-md text-white hover:shadow-md bg-teal-400"
-              onClick={() => deleteData(data._id)}
+              onClick={() => deleteData(data)}
             >
               Yes
             </button>
