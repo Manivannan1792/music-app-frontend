@@ -160,20 +160,7 @@ const MusicPlayer = () => {
 export default MusicPlayer;
 
 export const PlayListCard = () => {
-  const [
-    {
-      allArtists,
-      allAlbums,
-      albumFilter,
-      artistFilter,
-      filterTerm,
-      languageFilter,
-      allSongs,
-      isSongPlaying,
-      songIndex,
-    },
-    dispath,
-  ] = useStateValue();
+  const [{ allSongs, isSongPlaying, songIndex }, dispath] = useStateValue();
   const getAllSongs = async () => {
     try {
       const res = await axios.get(
