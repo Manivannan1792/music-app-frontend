@@ -231,7 +231,7 @@ export default function Login() {
             <h5>Admin Credentials</h5>
             <p>
               Email:123@gmail.com <br />
-              password:123456789
+              password:Admin@123
             </p>
           </div>
 
@@ -253,7 +253,7 @@ export default function Login() {
             <h5>Admin Credentials</h5>
             <p>
               Email:123@gmail.com <br />
-              password:123456789
+              password:Admin@123
             </p>
           </div>
           <img src={two} className="image" alt=""></img>
