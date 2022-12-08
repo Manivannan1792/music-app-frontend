@@ -543,7 +543,7 @@ const NewSongs = () => {
         />
         {/* Save button */}
         <div className="flex items-center justify-center w-full p-4">
-          {isArtistLoading ? (
+          {isAlbumLoading ? (
             <DisabledButton />
           ) : (
             <motion.button

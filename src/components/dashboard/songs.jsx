@@ -155,7 +155,6 @@ export const AlbumCard = ({ data, type, index }) => {
     if (type === "song") {
       const deleteRef = ref(storage, data.imageURL);
       deleteObject(deleteRef).then(() => {});
-      window.location.reload();
       deleteSongById(data._id);
     }
     if (type === "artist") {
@@ -231,9 +230,12 @@ export const AlbumCard = ({ data, type, index }) => {
         </span>
       </p>
       <div className="w-full absolute bottom-2 right-2 flex items-center justify-between px-4">
-        <motion.i whileTap={{ scale: 0.75 }} onClick={() => setIsDeleted(true)}>
+        <motion.div
+          whileTap={{ scale: 0.75 }}
+          onClick={() => setIsDeleted(true)}
+        >
           <IoTrash className="text-base text-red-400 drop-shadow-md hover:text-red-600" />
-        </motion.i>
+        </motion.div>
       </div>
     </motion.div>
   );
