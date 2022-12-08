@@ -41,7 +41,7 @@ const Header = () => {
   const navigate = useNavigate();
   const logout = () => {
     localStorage.clear("token");
-    navigate("/login");
+    navigate("/");
   };
 
   useEffect(() => {
