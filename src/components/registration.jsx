@@ -227,6 +227,8 @@ export default function Login() {
             >
               sign Up
             </button>
+            <p></p>
+            <h5>Admin Credentials</h5>
             <p>
               Email:123@gmail.com <br />
               password:123456789
