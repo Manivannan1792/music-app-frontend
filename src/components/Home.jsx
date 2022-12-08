@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useStateValue } from "../context/stateProvider";
 import { motion } from "framer-motion";
-
 import Header from "./Header";
 import { actionType } from "../context/reducer";
 import axios from "axios";
@@ -54,31 +53,31 @@ export default Home;
 export const HomeSongContainer = ({ musics }) => {
   const [{ allSongs, isSongPlaying, songIndex }, dispatch] = useStateValue();
 
-  const addSongToContext = (index) => {
+  const addSongToContext = (indexs) => {
     if (!isSongPlaying) {
       dispatch({
         type: actionType.SET_ISSONG_PLAYING,
         isSongPlaying: true,
       });
     }
-    if (songIndex !== index) {
+    if (songIndex !== indexs) {
       dispatch({
         type: actionType.SET_SONG_INDEX,
-        songIndex: index,
+        songIndex: indexs,
       });
     }
   };
   return (
     <>
-      {musics?.map((data, index) => (
+      {musics?.map((data, indexs) => (
         <motion.div
           key={data._id}
           whileTap={{ scale: 0.8 }}
           initial={{ opacity: 0, translateX: -50 }}
           animate={{ opacity: 1, translateX: 0 }}
-          transition={{ duration: 0.3, delay: index * 0.1 }}
+          transition={{ duration: 0.3, delay: indexs * 0.1 }}
           className="relative w-40 min-w-210 px-2 py-4 cursor-pointer hover:shadow-xl hover:bg-card bg-gray-100 shadow-md rounded-lg flex flex-col items-center"
-          onClick={() => addSongToContext(index)}
+          onClick={() => addSongToContext(indexs)}
         >
           <div className="w-40 min-w-[160px] h-40 min-h-[160px] rounded-lg drop-shadow-lg relative overflow-hidden">
             <motion.img
