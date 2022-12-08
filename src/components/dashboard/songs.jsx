@@ -67,14 +67,14 @@ const Songs = () => {
           </motion.i>
         </div>
         <div className="relative w-full  my-4 p-4 py-12 border border-gray-300 rounded-md">
-          <div className="absolute top-4 left-4">
+          {/* <div className="absolute top-4 left-4">
             <p className="text-xl font-bold">
               <span className="text-sm font-semibold text-textColor">
                 Count :
               </span>
               {filteredSongs ? filteredSongs?.length : allSongs?.length}
             </p>
-          </div>
+          </div> */}
           <SongContainer data={filteredSongs ? filteredSongs : allSongs} />
         </div>
       </div>
@@ -161,7 +161,6 @@ export const AlbumCard = ({ data, type, index }) => {
     if (type === "artist") {
       const deleteRef = ref(storage, data.imageURL);
       deleteObject(deleteRef).then(() => {});
-      window.location.reload();
       deleteArtistById(data._id);
     }
   };
@@ -205,7 +204,7 @@ export const AlbumCard = ({ data, type, index }) => {
           <div className="flex items-center gap-3">
             <button
               className="text-sm px-4 py-1 rounded-md text-white hover:shadow-md bg-teal-400"
-              onClick={() => deleteData(data)}
+              onClick={() => deleteData(data._id)}
             >
               Yes
             </button>
