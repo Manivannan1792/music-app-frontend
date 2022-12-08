@@ -8,6 +8,26 @@ import { MdDelete } from "react-icons/md";
 
 const UserData = () => {
   const [{ allUsers }, dispatch] = useStateValue();
+
+  const getAllUsers = async () => {
+    try {
+      const res = await axios.get(
+        `https://online-music-app.onrender.com/register/getall`
+      );
+      //console.log(res.data);
+      dispatch({
+        type: actionType.SET_ALL_USERS,
+        allUsers: res.data.data,
+      });
+    } catch (error) {
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    getAllUsers();
+  }, []);
+
   return (
     <>
       <div className="w-full p-4 flex items-center justify-center flex-col">
@@ -52,7 +72,7 @@ export const UserCard = ({ data, index }) => {
       const res = await axios.put(
         `https://online-music-app.onrender.com/register/update/${userId}`,
         {
-          data: { role: role },
+          role,
         }
       );
       return res;
@@ -83,16 +103,14 @@ export const UserCard = ({ data, index }) => {
     }
   }, []);
   const UpdateUserRole = (userId, role) => {
-    // console.log(userId, role);
+    setRoleUpdated(false);
     update(userId, role).then((res) => {
-      // console.log(res);
-
       if (res) {
         getAllUsers().then((data) => {
           // console.log(data);
           dispatch({
             type: actionType.SET_ALL_USERS,
-            allUsers: data.role,
+            allUsers: data.data,
           });
         });
       }
@@ -125,7 +143,10 @@ export const UserCard = ({ data, index }) => {
   return (
     <>
       <motion.div
-        key={index}
+        // key={index}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: index * 0.1 }}
         className="relative w-full rounded-md flex items-center justify-between py-4 bg-lightOverlay cursor-pointer hover:bg-card hover:shadow-md"
       >
         {data._id !== user?.existuser._id && (
@@ -161,7 +182,7 @@ export const UserCard = ({ data, index }) => {
           >
               <p className="text-textColor text-sm font-semibold">
               Are you sure do u want to mark the user as{" "}
-              <span>{data.role === "admin" ? "Member" : "Admin"}</span> ?
+              <span>{data.role === "admin" ? "member" : "admin"}</span> ?
             </p>
             <div className="flex items-center gap-4">
               <motion.button
