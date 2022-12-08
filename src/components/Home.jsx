@@ -38,12 +38,12 @@ const Home = () => {
     getAllSongs();
   }, []);
   return (
-    <div className="h-auto flex items-center justify-center min-w-[680px]">
-      <div className="w-full  flex-col bg-orange-100">
-        <Header />
-        <div className="w-full h-auto flex items-center justify-evenly gap-4 flex-wrap p-4">
-          <HomeSongContainer musics={allSongs} />
-        </div>
+    <div className="h-auto  flex-col flex items-center justify-center min-w-[680px]">
+      <div className="w-full  bg-orange-100">
+        <Header />{" "}
+      </div>
+      <div className="w-full h-auto flex items-center justify-evenly gap-4 flex-wrap p-4">
+        <HomeSongContainer musics={allSongs} />
       </div>
     </div>
   );

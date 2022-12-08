@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.svg";
 import { FaCrown } from "react-icons/fa";
 import axios from "axios";
 import { useStateValue } from "../context/stateProvider";
