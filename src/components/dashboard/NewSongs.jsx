@@ -180,7 +180,15 @@ const NewSongs = () => {
     }
   };
   const saveSong = () => {
-    if (!songImageCover || !audioImageCover || !songName) {
+    if (
+      !songImageCover ||
+      !audioImageCover ||
+      !songName ||
+      !artistFilter ||
+      !albumFilter ||
+      !languageFilter ||
+      !filterTerm
+    ) {
       // console.log("file missing");
       Swal.fire({
         title: "Fill All Feild",
