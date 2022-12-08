@@ -10,6 +10,7 @@ import { IoArrowRedo, IoMusicalNote } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 
 const MusicPlayer = () => {
+  const [isPlayList, setIsPlayList] = useState(false);
   const [{ allSongs, isSongPlaying, songIndex, miniPlayer }, dispath] =
     useStateValue();
   ///
@@ -47,7 +48,7 @@ const MusicPlayer = () => {
   const nextTrack = () => {
     // console.log(songIndex > allSongs.length - 1);
     // console.log(songIndex, allSongs.length - 2);
-    if (songIndex > allSongs.length - 2) {
+    if (songIndex > allSongs.length - 1) {
       dispath({
         type: actionType.SET_SONG_INDEX,
         songIndex: 0,
@@ -73,10 +74,10 @@ const MusicPlayer = () => {
       });
     }
   };
-  const [isPlayList, setIsPlayList] = useState(false);
+
   return (
     <>
-      <div className="w-full  flex items-center gap-3 ">
+      <div className="w-full full flex items-center gap-3 ">
         <div
           className={`w-full full items-center gap-3 p-4 ${
             miniPlayer ? "absolute top-40" : "flex relative"
@@ -93,11 +94,11 @@ const MusicPlayer = () => {
                 allSongs[songIndex]?.name.length > 20
                   ? allSongs[songIndex]?.name.slice(0, 20)
                   : allSongs[songIndex]?.name
-              }`}{" "}
+              }`}
               <span className="text-base">({allSongs[songIndex]?.album})</span>
             </p>
             <p className="text-textColor">
-              {allSongs[songIndex]?.artist}{" "}
+              {allSongs[songIndex]?.artist}
               <span className="text-sm text-textColor font-semibold">
                 ({allSongs[songIndex]?.category})
               </span>
@@ -200,7 +201,7 @@ export const PlayListCard = () => {
     if (songIndex !== index) {
       dispath({
         type: actionType.SET_SONG_INDEX,
-        songIndex: true,
+        songIndex: index,
       });
     }
   };
@@ -217,7 +218,7 @@ export const PlayListCard = () => {
                 music?._id === songIndex._id ? "bg-card" : "bg-transparent"
               }`}
               onClick={() => setCurrentPlaySong(index)}
-              key={index}
+              key={songIndex._id}
             >
               <IoMusicalNote className="text-textColor group-hover:text-headingColor text-2xl cursor-pointer" />
               <div className="flex items-start flex-col">
@@ -226,11 +227,11 @@ export const PlayListCard = () => {
                     music?.name.length > 20
                       ? music?.name.slice(0, 20)
                       : music?.name
-                  }`}{" "}
+                  }`}
                   <span className="text-base">({music?.album})</span>
                 </p>
                 <p className="text-textColor">
-                  {music?.artist}{" "}
+                  {music?.artist}
                   <span className="text-sm text-textColor font-semibold">
                     ({music?.category})
                   </span>

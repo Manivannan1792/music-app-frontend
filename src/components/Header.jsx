@@ -41,7 +41,7 @@ const Header = () => {
   const navigate = useNavigate();
   const logout = () => {
     localStorage.clear("token");
-    navigate("/");
+    navigate("/login");
   };
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const Header = () => {
           </li>
           <li className="mx-5 text-lg">
             <NavLink
-              to={""}
+              to={"/login"}
               className={({ isActive }) =>
                 isActive ? isActiveStyle : isnotActiveStyle
               }
@@ -77,7 +77,7 @@ const Header = () => {
           </li>
           <li className="mx-5 text-lg">
             <NavLink
-              to={""}
+              to={"/"}
               className={({ isActive }) =>
                 isActive ? isActiveStyle : isnotActiveStyle
               }
@@ -117,7 +117,7 @@ const Header = () => {
                   <hr />
                 </>
               )}
-              <NavLink to={{}}>
+              <NavLink to={"/userProfile"}>
                 <p className="text-base text-textColor hover:font-semibold duration-150 transition-all ease-in-out">
                   Profile
                 </p>
