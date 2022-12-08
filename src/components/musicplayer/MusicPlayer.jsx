@@ -8,6 +8,7 @@ import axios from "axios";
 import { actionType } from "../../context/reducer";
 import { IoArrowRedo, IoMusicalNote } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
+import "./index.css";
 
 const MusicPlayer = () => {
   const [isPlayList, setIsPlayList] = useState(false);
